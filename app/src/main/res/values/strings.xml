@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Speeker</string>
+    <string name="speak">Speech</string>
+    <string name="hint">Enter text..</string>
+</resources>
