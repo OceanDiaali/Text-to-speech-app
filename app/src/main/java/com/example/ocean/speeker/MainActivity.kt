@@ -1,11 +1,13 @@
 package com.example.ocean.speeker
 
+import android.media.Image
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -13,20 +15,23 @@ import java.util.*
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private var tts: TextToSpeech? = null
-    private var buttonSpeak: Button? = null
+    //private var buttonSpeak: Button? = null
+    //private var buttonSpeak: ImageView? = this.button_speak
     private var editText: EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        buttonSpeak = this.button_speak
+        //buttonSpeak = this.button_speak
         editText = this.edittext_input
 
-        buttonSpeak!!.isEnabled = false;
+       //buttonSpeak!!.isEnabled = false;
         tts = TextToSpeech(this, this)
 
-        buttonSpeak!!.setOnClickListener { speakOut() }
+        button_speak.setOnClickListener { speakOut() }
+
+        //buttonSpeak!!.setOnClickListener { speakOut() }
     }
 
     override fun onInit(status: Int) {
@@ -39,7 +44,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 //Log.e("TTS","The Language specified is not supported!")
                 Toast.makeText(applicationContext, "This language is not supported!", Toast.LENGTH_LONG).show()
             } else {
-                buttonSpeak!!.isEnabled = true
+                //buttonSpeak!!.isEnabled = true
             }
 
         } else {
